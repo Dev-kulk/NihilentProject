@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+
+    <menu>
+        <add id="Deven_UserManager::main"
+             title="User Manager"
+             module="Deven_UserManager"
+             sortOrder="10"
+             parent="Magento_Backend::content"
+             resource="Deven_UserManager::main"/>
+
+        <add id="Deven_UserManager::user"
+             title="Manage Users"
+             module="Deven_UserManager"
+             sortOrder="20"
+             parent="Deven_UserManager::main"
+             action="usermanager/user/index"
+             resource="Deven_UserManager::user"/>
+    </menu>
+</config>

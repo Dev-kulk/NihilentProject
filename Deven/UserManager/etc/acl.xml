@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Deven_UserManager::main" title="User Manager" sortOrder="10">
+                    <resource id="Deven_UserManager::user" title="Manage Users" sortOrder="20"/>
+                    <resource id="Deven_UserManager::add" title="Add User" sortOrder="30"/>
+                    <resource id="Deven_UserManager::edit" title="Edit User" sortOrder="40"/>
+                    <resource id="Deven_UserManager::delete" title="Delete User" sortOrder="50"/>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

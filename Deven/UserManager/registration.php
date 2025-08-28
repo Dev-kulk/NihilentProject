@@ -3,6 +3,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Deven_SignUpApi',
+    'Deven_UserManager',
     __DIR__
 );

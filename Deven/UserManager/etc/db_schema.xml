@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+    <table name="deven_users" resource="default" engine="innodb" comment="Users Table">
+
+        <!-- Primary key -->
+        <column xsi:type="int" name="user_id" nullable="false" identity="true" unsigned="true" comment="User ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="user_id"/>
+        </constraint>
+
+        <!-- Varchar / Text fields (length allowed) -->
+        <column xsi:type="text" name="name" nullable="false" comment="User Name"/>
+        <column xsi:type="text" name="email" nullable="false" comment="Email Address"/>
+
+        <!-- Integer field (no length) -->
+        <column xsi:type="int" name="age" nullable="true" comment="Age"/>
+
+        <!-- Small int (no length) -->
+        <column xsi:type="smallint" name="status" nullable="false" default="1" comment="Status"/>
+    </table>
+</schema>

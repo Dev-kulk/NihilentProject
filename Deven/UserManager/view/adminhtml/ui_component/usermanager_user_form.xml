@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <dataSource name="user_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Deven\UserManager\Model\User\DataProvider</argument>
+            <argument name="name" xsi:type="string">user_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">user_id</argument>
+            <argument name="requestFieldName" xsi:type="string">user_id</argument>
+        </argument>
+        <settings>
+            <submitUrl path="usermanager/user/save"/>
+        </settings>
+        <dataProvider class="Deven\UserManager\Model\User\DataProvider"/>
+    </dataSource>
+
+    <settings>
+        <buttons>
+            <button name="back"/>
+            <button name="reset"/>
+            <button name="save"/>
+            <button name="delete"/>
+        </buttons>
+    </settings>
+
+    <fieldset name="general">
+        <field name="user_id" formElement="hidden">
+            <settings>
+                <dataType>int</dataType>
+                <visible>false</visible>
+            </settings>
+        </field>
+        <field name="name" formElement="input">
+            <settings>
+                <label translate="true">Name</label>
+                <dataType>text</dataType>
+                <dataScope>name</dataScope>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+        <field name="email" formElement="input">
+            <settings>
+                <label translate="true">Email</label>
+                <dataType>text</dataType>
+                <dataScope>email</dataScope>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                    <rule name="validate-email" xsi:type="boolean">true</rule>
+                </validation>
+            </settings>
+        </field>
+    </fieldset>
+</form>

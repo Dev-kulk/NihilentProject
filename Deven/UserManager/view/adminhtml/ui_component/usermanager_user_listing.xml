@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
+    <dataSource name="user_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Deven\UserManager\Ui\DataProvider\User\ListingDataProvider</argument>
+            <argument name="name" xsi:type="string">user_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">user_id</argument>
+            <argument name="requestFieldName" xsi:type="string">user_id</argument>
+            <argument name="collection" xsi:type="string">Deven\UserManager\Model\ResourceModel\User\Collection</argument>
+        </argument>
+    </dataSource>
+
+    <listingToolbar name="listing_top">
+        <button name="add">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Add New User</item>
+                    <item name="class" xsi:type="string">primary</item>
+                    <item name="url" xsi:type="string">*/*/add</item>
+                    <item name="aclResource" xsi:type="string">Deven_UserManager::user</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </button>
+    </listingToolbar>
+
+    <columns name="user_columns">
+        <column name="user_id">
+            <settings>
+                <filter>text</filter>
+                <sorting>asc</sorting>
+                <label translate="true">ID</label>
+            </settings>
+        </column>
+
+        <column name="name">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Name</label>
+            </settings>
+        </column>
+
+        <column name="email">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Email</label>
+            </settings>
+        </column>
+
+        <column name="age">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Age</label>
+            </settings>
+        </column>
+
+        <column name="actions" class="Deven\UserManager\Ui\Component\Listing\Column\UserActions">
+            <settings>
+                <label translate="true">Actions</label>
+                <sortable>false</sortable>
+            </settings>
+        </column>
+    </columns>
+</listing>
